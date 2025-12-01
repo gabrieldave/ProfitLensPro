@@ -2,15 +2,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-const orders = [
-  { id: "ORD-001", customer: "Liam Johnson", value: "$250.00", status: "Completed", date: "2 mins ago" },
-  { id: "ORD-002", customer: "Olivia Smith", value: "$120.50", status: "Processing", date: "15 mins ago" },
-  { id: "ORD-003", customer: "Noah Williams", value: "$450.00", status: "Completed", date: "1 hr ago" },
-  { id: "ORD-004", customer: "Emma Brown", value: "$65.00", status: "Completed", date: "3 hrs ago" },
-  { id: "ORD-005", customer: "Ava Jones", value: "$890.00", status: "Processing", date: "5 hrs ago" },
-];
+interface Order {
+  id: string;
+  customer: string;
+  value: string;
+  status: "Completed" | "Processing";
+  date: string;
+}
 
-export default function RecentOrders() {
+interface RecentOrdersProps {
+  orders: Order[];
+}
+
+export default function RecentOrders({ orders }: RecentOrdersProps) {
   return (
     <Card className="col-span-3 border-border bg-card">
       <CardHeader>

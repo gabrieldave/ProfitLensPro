@@ -1,26 +1,17 @@
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const data = [
-  { date: "Sep 01", revenue: 4200, profit: 2100 },
-  { date: "Sep 03", revenue: 3800, profit: 1900 },
-  { date: "Sep 05", revenue: 5100, profit: 2800 },
-  { date: "Sep 07", revenue: 4600, profit: 2300 },
-  { date: "Sep 09", revenue: 6200, profit: 3400 },
-  { date: "Sep 11", revenue: 5800, profit: 2900 },
-  { date: "Sep 13", revenue: 7400, profit: 4100 },
-  { date: "Sep 15", revenue: 6900, profit: 3600 },
-  { date: "Sep 17", revenue: 8100, profit: 4500 },
-  { date: "Sep 19", revenue: 7600, profit: 3900 },
-  { date: "Sep 21", revenue: 8900, profit: 4800 },
-  { date: "Sep 23", revenue: 8200, profit: 4200 },
-  { date: "Sep 25", revenue: 9400, profit: 5100 },
-  { date: "Sep 27", revenue: 8800, profit: 4600 },
-  { date: "Sep 29", revenue: 10200, profit: 5600 },
-  { date: "Sep 30", revenue: 9800, profit: 5300 },
-];
+interface RevenueDataPoint {
+  date: string;
+  revenue: number;
+  profit: number;
+}
 
-export default function RevenueChart() {
+interface RevenueChartProps {
+  data: RevenueDataPoint[];
+}
+
+export default function RevenueChart({ data }: RevenueChartProps) {
   return (
     <Card className="col-span-4 border-border bg-card">
       <CardHeader>
