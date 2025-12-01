@@ -6,13 +6,8 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
-
-  // Dashboard API endpoint
+  // Endpoint Mock para Demo (Sin WooCommerce real)
   app.get("/api/dashboard", (req, res) => {
     const dashboardData = {
       kpis: [
@@ -20,26 +15,26 @@ export async function registerRoutes(
           title: "Net Profit",
           value: "$12,450",
           change: "+12.5%",
-          trend: "up" as const,
+          trend: "up",
           isHighlighted: true,
         },
         {
           title: "Total Revenue",
           value: "$45,231",
           change: "+8.2%",
-          trend: "up" as const,
+          trend: "up",
         },
         {
           title: "Ad Spend",
           value: "$8,200",
           change: "+2.4%",
-          trend: "down" as const,
+          trend: "down",
         },
         {
           title: "Net Margin %",
           value: "27.5%",
           change: "+1.2%",
-          trend: "up" as const,
+          trend: "up",
           tooltipText: "(Net Profit / Total Revenue) * 100. This metric shows how much profit you generate for each dollar of revenue.",
         },
       ],
@@ -62,11 +57,11 @@ export async function registerRoutes(
         { date: "Sep 30", revenue: 9800, profit: 5300 },
       ],
       recentOrders: [
-        { id: "ORD-001", customer: "Liam Johnson", value: "$250.00", status: "Completed" as const, date: "2 mins ago" },
-        { id: "ORD-002", customer: "Olivia Smith", value: "$120.50", status: "Processing" as const, date: "15 mins ago" },
-        { id: "ORD-003", customer: "Noah Williams", value: "$450.00", status: "Completed" as const, date: "1 hr ago" },
-        { id: "ORD-004", customer: "Emma Brown", value: "$65.00", status: "Completed" as const, date: "3 hrs ago" },
-        { id: "ORD-005", customer: "Ava Jones", value: "$890.00", status: "Processing" as const, date: "5 hrs ago" },
+        { id: "ORD-001", customer: "Liam Johnson", value: "$250.00", status: "Completed", date: "2 mins ago" },
+        { id: "ORD-002", customer: "Olivia Smith", value: "$120.50", status: "Processing", date: "15 mins ago" },
+        { id: "ORD-003", customer: "Noah Williams", value: "$450.00", status: "Completed", date: "1 hr ago" },
+        { id: "ORD-004", customer: "Emma Brown", value: "$65.00", status: "Completed", date: "3 hrs ago" },
+        { id: "ORD-005", customer: "Ava Jones", value: "$890.00", status: "Processing", date: "5 hrs ago" },
       ],
     };
 
