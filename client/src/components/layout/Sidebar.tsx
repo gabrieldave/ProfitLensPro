@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { LayoutDashboard, DollarSign, ShoppingCart, Settings, BarChart3 } from "lucide-react";
+import { LayoutDashboard, DollarSign, ShoppingCart, Settings, BarChart3, Link2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import StatusWidget from "../dashboard/StatusWidget";
 
@@ -11,6 +11,7 @@ export default function Sidebar() {
     { icon: ShoppingCart, label: "Sales", href: "/sales" },
     { icon: DollarSign, label: "Expenses", href: "/expenses" },
     { icon: BarChart3, label: "Reports", href: "/reports" },
+    { icon: Link2, label: "Connect Store", href: "/connect" },
     { icon: Settings, label: "Settings", href: "/settings" },
   ];
 
